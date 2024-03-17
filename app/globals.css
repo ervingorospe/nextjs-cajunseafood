@@ -1,0 +1,73 @@
+/* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@300;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200;0,7..72,300;0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700;0,7..72,800;0,7..72,900;1,7..72,200;1,7..72,300;1,7..72,400;1,7..72,500;1,7..72,600;1,7..72,700;1,7..72,800;1,7..72,900&display=swap'); */
+
+@tailwind base;
+@tailwind components;
+
+/*
+shared button styles
+
+here in the CSS you define the padding, rounded corners, borders, casing, tracking etc.
+
+the actual bg color,text color and hover colors are defined within the classes of the actual HTML elements
+ */
+
+@layer components {
+  .button {
+    @apply cursor-pointer items-center justify-center rounded border-2 border-transparent px-6 py-2 tracking-wider text-base font-semibold shadow-sm transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+/*
+define different button sizes
+button-sm, button-lg, button-xl etc.
+
+you can change the size of the button per breakpoint
+class="button button-sm md:button-base xl:button-xl"
+*/
+  .button-base {
+    @apply text-base;
+  }
+
+  .button-xs {
+    @apply px-3 py-1 text-xs;
+  }
+
+  .button-sm {
+    @apply px-4 py-1.5 text-sm;
+  }
+
+  .button-lg {
+    @apply px-6 py-2 text-lg;
+  }
+
+  .button-xl {
+    @apply px-7 py-2.5 text-xl;
+  }
+
+  .button-2xl {
+    @apply px-8 py-2.5 text-2xl;
+  }
+
+  .nav-link:after {
+    display:block;
+    content: '';
+    border-bottom: solid 3px theme('colors.secondary.300');
+    transform: scaleX(0); 
+    transition: transform 250ms ease-in-out;
+  }
+  
+  .nav-link:after{  transform-origin: 50% 100%; }
+  .nav-link:hover:after { transform: scaleX(1); }
+}
+
+@tailwind utilities;
+
+
+.pattern-primary {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10h10v10H0V10zM10 0h10v10H10V0z' fill='%23DD0021' fill-opacity='0.5' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.pattern-primary-light {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10h10v10H0V10zM10 0h10v10H10V0z' fill='%23FF1639' fill-opacity='0.5' fill-rule='evenodd'/%3E%3C/svg%3E");
+}

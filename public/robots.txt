@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://cajun-seafood-1355.vercel.app/
+
+# Sitemaps
+Sitemap: https://cajun-seafood-1355.vercel.app/sitemap.xml
